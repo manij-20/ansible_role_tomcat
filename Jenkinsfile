@@ -11,7 +11,6 @@ pipeline {
         stage('Deploy Tomcat using Ansible Role') {
             steps {
                 sh '''
-                  cd ansible_role_tomcat || exit 1
                   ansible-playbook -i hosts.ini install_tomcat.yml
                 '''
             }
